@@ -1,53 +1,23 @@
-# Tailwind CSS Playground
+# Creación de Router para Single Page App con Javascript
 
-A simple starter project for playing around with Tailwind in a proper PostCSS environment.
+Los pasos que se van a seguir para llevar a cabo la creación del Router del lado del cliente para SPA son:
 
-To get started:
+Cargar la ruta
+Identificar en donde nos encontramos en el sitio. (Carga inicial de la ruta).
 
-1. Clone the repository:
+`loadInitialRoute()`
 
-    ```bash
-    git clone https://github.com/tailwindcss/playground.git tailwindcss-playground
+Comparar la URL con una ruta
+La URL a la que nos queremos mover, se debe comparar con las rutas que tenemos.
 
-    cd tailwindcss-playground
-    ```
+`matchUrlToRoute()`
 
-2. Install the dependencies:
+Actualizar la URL en la barra de navegación
+Para esto utilizaremos el método de HTML pushState. (windows.history.pushState).
 
-    ```bash
-    # Using npm
-    npm install
+`loadRoute()`
 
-    # Using Yarn
-    yarn
-    ```
+Actualizar el DOM con el nuevo contenido
+Para esto vamos a usar innerHTML.
 
-3. Start the development server:
-
-    ```bash
-    # Using npm
-    npm run serve
-
-    # Using Yarn
-    yarn run serve
-    ```
-
-    Now you should be able to see the project running at localhost:8080.
-
-4. Open `public/index.html` in your editor and start experimenting!
-
-## Building for production
-
-Even though this isn't necessarily a starter kit for a proper project, we've included an example of setting up both [Purgecss](https://www.purgecss.com/) and [cssnano](https://cssnano.co/) to optimize your CSS for production.
-
-To build an optimized version of your CSS, simply run:
-
-```bash
-# Using npm
-npm run production
-
-# Using Yarn
-yarn run production
-```
-
-After that's done, check out `./public/build/tailwind.css` to see the optimized output.
+`loadRoute()`
